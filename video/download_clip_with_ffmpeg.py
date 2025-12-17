@@ -42,6 +42,14 @@ def download_video_clip(
         time_range,
     ]
 
+
+ """
+    參數說明
+    ----------
+    cmd.extend(["--ffmpeg-location", ffmpeg_path])
+    等價於 CLI：   --ffmpeg-location C:\path\to\ffmpeg\bin
+    明確告訴 yt-dlp： ffmpeg 在這個位置
+    """
     if ffmpeg_path:
         cmd.extend(["--ffmpeg-location", ffmpeg_path])
 
@@ -65,3 +73,13 @@ if __name__ == "__main__":
         time_range=TIME_RANGE,
         ffmpeg_path=FFMPEG_PATH,
     )
+
+
+
+# cmd = [
+#     sys.executable, "-m", "yt_dlp",
+#     "--ffmpeg-location", r"C:\Users\TMP-214\Downloads\ffmpeg\bin",
+#     "--download-sections", "*00:00:03-00:01:43",
+#     "https://www.ted.com/talks/john_mills_how_we_built_watch_duty_the_lifesaving_wildfire_alert_app"
+# ]
+# subprocess.run(cmd, check=True)
